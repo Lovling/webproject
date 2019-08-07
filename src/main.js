@@ -1,9 +1,10 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+import router from "./router/router.js";
+import store from "./store/store.js";
 import flexible from "flexible.js";
 import fastClick from "fastclick";
+import "./api/mock.js";
 
 Vue.config.productionTip = false;
 // 1rem = 50px, 需要编辑器插件配置一下
