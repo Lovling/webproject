@@ -5,7 +5,9 @@ import store from "./store/store.js";
 import flexible from "flexible.js";
 import fastClick from "fastclick";
 import "./api/mock.js";
+import service from "./api";
 
+Vue.prototype.service = service;
 Vue.config.productionTip = false;
 // 1rem = 50px, 需要编辑器插件配置一下
 flexible(750, 640);

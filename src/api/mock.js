@@ -1,6 +1,7 @@
 import Mock from "mockjs";
+import { publicPath } from "./serve";
 
-Mock.mock(`${url}/seller`, "GET", {
+Mock.mock(`${publicPath}/seller`, "GET", {
   success: true,
   code: "200",
   retMsg: "执行成功!",
@@ -57,7 +58,7 @@ Mock.mock(`${url}/seller`, "GET", {
   }
 });
 
-Mock.mock(`${url}/seller`, "GET", {
+Mock.mock(`${publicPath}/goods`, "GET", {
   success: true,
   code: "200",
   retMsg: "执行成功!",
@@ -1384,7 +1385,7 @@ Mock.mock(`${url}/seller`, "GET", {
   ]
 });
 
-Mock.mock(`${url}/seller`, "GET", {
+Mock.mock(`${publicPath}/ratings`, "GET", {
   success: true,
   code: "200",
   retMsg: "执行成功!",
@@ -1412,7 +1413,6 @@ Mock.mock(`${url}/seller`, "GET", {
       deliveryTime: "",
       score: 4,
       rateType: 0,
-      deliveryTime: "",
       text: "服务态度不错",
       avatar:
         "http://static.galileo.xiaojukeji.com/static/tms/default_header.png",

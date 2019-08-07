@@ -1,4 +1,5 @@
 const path = require("path");
+const hostname = require("ip").address();
 
 function resolve(dir) {
   return path.join(__dirname, "./", dir);
@@ -43,20 +44,20 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     port: 8085, // 端口号
-    host: "localhost",
+    host: hostname,
     https: false, // https:{type:Boolean}
     open: true, //配置自动启动浏览器
-    hotOnly: true // 热更新
+    hotOnly: true, // 热更新
     // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
-    // proxy: {
-    //     '/api': {
-    //         target: '<url>',
-    //         ws: true,
-    //         changeOrigin: true
-    //     },
-    //     '/foo': {
-    //         target: '<other_url>'
-    //     }
-    // },  // 配置多个代理
+    proxy: {
+      // "/api": {
+      //   target: "http://elema.com",
+      //   ws: true,
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     "/api": ""
+      //   }
+      // }
+    } // 配置多个代理
   }
 };
