@@ -47,17 +47,17 @@ module.exports = {
     host: hostname,
     https: false, // https:{type:Boolean}
     open: true, //配置自动启动浏览器
-    hotOnly: true, // 热更新
-    // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
-    proxy: {
-      // "/api": {
-      //   target: "http://elema.com",
-      //   ws: true,
-      //   changeOrigin: true,
-      //   pathRewrite: {
-      //     "/api": ""
-      //   }
-      // }
-    } // 配置多个代理
+    hotOnly: true // 热更新
+    // proxy: "http://serviceSell.com" // 配置跨域处理,只有一个代理
+    // proxy: {
+    //   "/api": {
+    //     target: "http://172.16.10.56:8085",
+    //     ws: true,
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       "/api": ""
+    //     }
+    //   }
+    // } // 配置多个代理
   }
 };

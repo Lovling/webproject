@@ -4,7 +4,7 @@ import qs from "qs";
 axios.defaults.timeout = 5000; //响应超时时间
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
-export const publicPath = "http://serviceSell.com";
+export const publicPath = "http://elema.com";
 
 axios.defaults.baseURL = publicPath;
 

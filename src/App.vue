@@ -6,7 +6,7 @@
 <script>
 export default {
   created() {
-    this.service.getGood().then(res => console.log(res));
+    this.api.getGood().then(res => console.log(res));
   }
 };
 </script>
