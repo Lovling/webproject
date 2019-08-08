@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  created () {
+  created() {
     this.api.getSeller().then(res => console.log(res));
   }
 };

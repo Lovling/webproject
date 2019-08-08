@@ -1,9 +1,9 @@
 import Mock from "mockjs";
 import { baseURL } from "./serve";
 
-Mock.mock(`${baseURL}/seller`, "GET", {
+Mock.mock(`${baseURL}/getSeller`, "get", {
   success: true,
-  code: "200",
+  code: "0000",
   retMsg: "执行成功!",
   seller: {
     name: "小号家常菜（世纪城）",
@@ -58,9 +58,9 @@ Mock.mock(`${baseURL}/seller`, "GET", {
   }
 });
 
-Mock.mock(`${baseURL}/api/goods`, "GET", {
+Mock.mock(`${baseURL}/getGoods`, "get", {
   success: true,
-  code: "200",
+  code: "0000",
   retMsg: "执行成功!",
   goods: [
     {
@@ -1385,9 +1385,9 @@ Mock.mock(`${baseURL}/api/goods`, "GET", {
   ]
 });
 
-Mock.mock(`${baseURL}/ratings`, "GET", {
+Mock.mock(`${baseURL}/getRatings`, "get", {
   success: true,
-  code: "200",
+  code: "0000",
   retMsg: "执行成功!",
   ratings: [
     {

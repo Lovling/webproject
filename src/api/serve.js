@@ -1,15 +1,29 @@
+// API REQUEST CONFIGURATION CENTER
 import axios from "axios";
 import qs from "qs";
 
-axios.defaults.timeout = 5000; //响应超时时间
+axios.defaults.timeout = 5000; // 响应的超时时间
 axios.defaults.headers.post["Content-Type"] =
   "application/x-www-form-urlencoded;charset=UTF-8";
 
+// 开发环境 模拟数据
 export const baseURL = "http://serviceSell.com";
 
 axios.defaults.baseURL = baseURL;
 
-// post 传参序列化
+/*
+  后台状态码：
+    SUCCESS("0000", "执行成功!"),
+    SAVE_FAIL("9001", "保存失败"),
+    ROOM_LEFT("9002", "房间数量不足"),
+    DAYS_LIMIT("9003", "短期不能超过3天"),
+    NO_REACTION("9004", "已体验尚未反馈"),
+    AHEAD_WEEK("9005", "请提前一周进行操作"),
+    AUTH_FAIL("9006", "尚未认证"),
+    COMPLETE_USER("9006", "请完善用户信息"),
+    FAILURE("9999", "服务调用失败");
+*/
+// POST传参序列化
 axios.interceptors.request.use(
   config => {
     config.method === "post" && (config.data = qs.stringify(config.data));
@@ -18,10 +32,18 @@ axios.interceptors.request.use(
   error => Promise.reject(error)
 );
 
-// axios的二次封装
-const serve = (url, method = "GET", data) => {
+// 返回状态判断
+// axios.interceptors.response.use(res => {
+//   if (res.data.retCode !== '0000') {
+//     return Promise.reject(res)
+//   }
+//   return res
+// }, error => Promise.reject(error))
+
+// 对axios二次封装
+const fetch = (url, method = "get", data) => {
   return new Promise((resolve, reject) => {
-    axios((url, method, data))
+    axios({ url, method, data })
       .then(
         response => resolve(response.data),
         err => {
@@ -29,10 +51,6 @@ const serve = (url, method = "GET", data) => {
         }
       )
       .catch(error => reject(error.data));
-  }).catch(function(reason) {
-    //有选择性的在此处抛出错误或不抛出
-    console.log("catch:", reason);
   });
 };
-
-export default serve;
+export default fetch;
