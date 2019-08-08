@@ -1,6 +1,6 @@
-import service from "./serve";
+import serve from "./serve";
 export default {
-  getGood: () => service(`/goods`),
-  getRatings: () => service(`/ratings`),
-  getSeller: () => service(`/seller`)
-}
+  getSeller: () => serve(`/seller`),
+  getGood: () => serve(`/goods`),
+  getRatings: () => serve(`/ratings`)
+};

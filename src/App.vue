@@ -5,8 +5,8 @@
 </template>
 <script>
 export default {
-  created() {
-    this.api.getGood().then(res => console.log(res));
+  created () {
+    this.api.getSeller().then(res => console.log(res));
   }
 };
 </script>

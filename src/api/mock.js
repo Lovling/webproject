@@ -1,7 +1,7 @@
 import Mock from "mockjs";
-import { publicPath } from "./serve";
+import { baseURL } from "./serve";
 
-Mock.mock(`${publicPath}/seller`, "GET", {
+Mock.mock(`${baseURL}/seller`, "GET", {
   success: true,
   code: "200",
   retMsg: "执行成功!",
@@ -58,7 +58,7 @@ Mock.mock(`${publicPath}/seller`, "GET", {
   }
 });
 
-Mock.mock(`${publicPath}/goods`, "GET", {
+Mock.mock(`${baseURL}/api/goods`, "GET", {
   success: true,
   code: "200",
   retMsg: "执行成功!",
@@ -1385,7 +1385,7 @@ Mock.mock(`${publicPath}/goods`, "GET", {
   ]
 });
 
-Mock.mock(`${publicPath}/ratings`, "GET", {
+Mock.mock(`${baseURL}/ratings`, "GET", {
   success: true,
   code: "200",
   retMsg: "执行成功!",

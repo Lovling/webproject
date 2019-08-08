@@ -5,8 +5,8 @@ import store from "./store/store.js";
 import flexible from "flexible.js";
 import fastClick from "fastclick";
 import api from "./api";
+// import axios from "axios";
 import "./api/mock.js";
-
 Vue.prototype.api = api;
 Vue.config.productionTip = false;
 // 1rem = 50px, 需要编辑器插件配置一下

@@ -2,11 +2,12 @@ import axios from "axios";
 import qs from "qs";
 
 axios.defaults.timeout = 5000; //响应超时时间
-axios.defaults.headers.post["Content-Type"] = "application/json";
+axios.defaults.headers.post["Content-Type"] =
+  "application/x-www-form-urlencoded;charset=UTF-8";
 
-export const publicPath = "http://elema.com";
+export const baseURL = "http://serviceSell.com";
 
-axios.defaults.baseURL = publicPath;
+axios.defaults.baseURL = baseURL;
 
 // post 传参序列化
 axios.interceptors.request.use(
@@ -18,7 +19,7 @@ axios.interceptors.request.use(
 );
 
 // axios的二次封装
-const service = (url, method = "GET", data) => {
+const serve = (url, method = "GET", data) => {
   return new Promise((resolve, reject) => {
     axios((url, method, data))
       .then(
@@ -28,7 +29,10 @@ const service = (url, method = "GET", data) => {
         }
       )
       .catch(error => reject(error.data));
+  }).catch(function(reason) {
+    //有选择性的在此处抛出错误或不抛出
+    console.log("catch:", reason);
   });
 };
 
-export default service;
+export default serve;

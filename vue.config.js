@@ -6,18 +6,18 @@ function resolve(dir) {
 }
 
 module.exports = {
-  publicPath: "",
+  publicPath: "/",
   outputDir: "dist",
   chainWebpack: config => {
     // 为src下文件配别名，不使用相对路径
     config.resolve.alias
       .set("@", resolve("src"))
       .set("components", resolve("src/components"))
-      .set("views", resolve("src/views"))
-      .set("icons", resolve("src/icons"))
-      .set("router", resolve("src/router"))
-      .set("utils", resolve("src/utils"))
-      .set("style", resolve("src/style"));
+      .set("views", resolve("src/views"));
+    //   .set("icons", resolve("src/icons"))
+    //   .set("router", resolve("src/router"))
+    //   .set("utils", resolve("src/utils"))
+    //   .set("style", resolve("src/style"));
 
     /** 设置处理svg的router，使svg可直接用名称调用，无需路径 */
     // svg rule loader
@@ -51,11 +51,11 @@ module.exports = {
     // proxy: "http://serviceSell.com" // 配置跨域处理,只有一个代理
     // proxy: {
     //   "/api": {
-    //     target: "http://172.16.10.56:8085",
+    //     target: "http://serviceSell.com",
     //     ws: true,
     //     changeOrigin: true,
     //     pathRewrite: {
-    //       "/api": ""
+    //       "^/api": ""
     //     }
     //   }
     // } // 配置多个代理
