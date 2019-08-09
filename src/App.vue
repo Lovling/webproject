@@ -8,10 +8,10 @@
   </div>
 </template>
 <script>
-import head from "./components/head.vue";
+import head from './components/head.vue'
 export default {
   components: {
-    "v-head": head
+    'v-head': head
   }
 };
 </script>
