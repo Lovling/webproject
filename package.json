@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
+    "css-loader": "^3.2.0",
     "fastclick": "^1.0.6",
     "flexible.js": "^2.0.19",
     "mockjs": "^1.0.1-beta3",
@@ -17,7 +18,9 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
     "vue-router": "^3.0.3",
+    "vue-style-loader": "^4.1.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

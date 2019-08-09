@@ -13,8 +13,8 @@ module.exports = {
     config.resolve.alias
       .set("@", resolve("src"))
       .set("components", resolve("src/components"))
-      .set("views", resolve("src/views"));
-    //   .set("icons", resolve("src/icons"))
+      .set("views", resolve("src/views"))
+      .set("common", resolve("src/common"));
     //   .set("router", resolve("src/router"))
     //   .set("utils", resolve("src/utils"))
     //   .set("style", resolve("src/style"));
