@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-// import Home from "./views/Home.vue";
+import seller from "../views/seller.vue";
+import good from "../views/good";
+import ratings from "../views/ratings";
 
 Vue.use(Router);
 
@@ -8,11 +10,21 @@ export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
-    // {
-    //   path: "/",
-    //   name: "home",
-    //   component: Home
-    // },
+    {
+      path: "/seller",
+      name: "seller",
+      component: seller
+    },
+    {
+      path: "/",
+      name: "good",
+      component: good
+    },
+    {
+      path: "/ratings",
+      name: "ratings",
+      component: ratings
+    }
     // {
     //   path: "/about",
     //   name: "about",
