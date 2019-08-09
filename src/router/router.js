@@ -1,28 +1,28 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import seller from '../views/seller.vue'
-import good from '../views/good'
-import ratings from '../views/ratings'
+import Vue from "vue";
+import Router from "vue-router";
+import seller from "../views/seller.vue";
+import good from "../views/good";
+import ratings from "../views/ratings";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/seller',
-      name: 'seller',
+      path: "/seller",
+      name: "seller",
       component: seller
     },
     {
-      path: '/',
-      name: 'good',
+      path: "/",
+      name: "good",
       component: good
     },
     {
-      path: '/ratings',
-      name: 'ratings',
+      path: "/ratings",
+      name: "ratings",
       component: ratings
     }
     // {
@@ -35,4 +35,4 @@ export default new Router({
     //     import(/* webpackChunkName: "about" */ "./views/About.vue")
     // }
   ]
-})
+});

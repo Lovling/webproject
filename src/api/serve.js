@@ -1,15 +1,15 @@
 // API REQUEST CONFIGURATION CENTER
-import axios from 'axios'
-import qs from 'qs'
+import axios from "axios";
+import qs from "qs";
 
-axios.defaults.timeout = 5000 // 响应的超时时间
-axios.defaults.headers.post['Content-Type'] =
-  'application/x-www-form-urlencoded;charset=UTF-8'
+axios.defaults.timeout = 5000; // 响应的超时时间
+axios.defaults.headers.post["Content-Type"] =
+  "application/x-www-form-urlencoded;charset=UTF-8";
 
 // 开发环境 模拟数据
-export const baseURL = 'http://serviceSell.com'
+export const baseURL = "http://serviceSell.com";
 
-axios.defaults.baseURL = baseURL
+axios.defaults.baseURL = baseURL;
 
 /*
   后台状态码：
@@ -26,11 +26,11 @@ axios.defaults.baseURL = baseURL
 // POST传参序列化
 axios.interceptors.request.use(
   config => {
-    config.method === 'post' && (config.data = qs.stringify(config.data))
-    return config
+    config.method === "post" && (config.data = qs.stringify(config.data));
+    return config;
   },
   error => Promise.reject(error)
-)
+);
 
 // 返回状态判断
 // axios.interceptors.response.use(res => {
@@ -41,16 +41,16 @@ axios.interceptors.request.use(
 // }, error => Promise.reject(error))
 
 // 对axios二次封装
-const fetch = (url, method = 'get', data) => {
+const fetch = (url, method = "get", data) => {
   return new Promise((resolve, reject) => {
     axios({ url, method, data })
       .then(
         response => resolve(response.data),
         err => {
-          console.log(err.data.retMsg)
+          console.log(err.data.retMsg);
         }
       )
-      .catch(error => reject(error.data))
-  })
-}
-export default fetch
+      .catch(error => reject(error.data));
+  });
+};
+export default fetch;
