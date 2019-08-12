@@ -30,7 +30,13 @@
     </div>
     <!-- 模态框 -->
     <div class="popup" v-show="isShow">
-      模态框
+      <div class="title">{{ seller.name }}</div>
+      <div class="star"></div>
+      <div class="favorable"></div>
+      <div class="bulletin"></div>
+      <div class="detail-close">
+        <i class="icon-close"></i>
+      </div>
     </div>
   </section>
 </template>
@@ -221,12 +227,27 @@ export default {
       font-size 10px
       right 10px
       top 8px
+
   .popup
     position fixed
     top 0
     left 0
     width 100%
     height 100%
-    background-color rgba(7,17,27,.8)
-    blur: 10px
+    background-color rgba(7, 17, 27, 0.8)
+    backdrop-filter blur(10px)
+
+    .title
+      margin-top 64px
+      text-align center
+      font-size 16px
+      font-weight 700
+      color #fff
+      line-height 16px
+
+    .star
+      margin 16px 0 28px 0
+      text-align center
+      line-height 24px
+      background #fff
 </style>
