@@ -60,18 +60,18 @@ export default {
     padding 24px 12px 18px 24px
     box-sizing border-box
     position relative
+
     // z-index 1
     // &:after
-    //   content ""
-    //   width 100%
-    //   height 100%
-    //   position absolute
-    //   left 0
-    //   top 0
-    //   background inherit
-    //   filter blur(2px)
-    //   z-index 2
-
+    // content ""
+    // width 100%
+    // height 100%
+    // position absolute
+    // left 0
+    // top 0
+    // background inherit
+    // filter blur(2px)
+    // z-index 2
     .avatar
       display inline-block
       vertical-align top
@@ -144,10 +144,11 @@ export default {
           line-height 12px
           display inline-bliock
           vertical-align top
+
     .countBox
       width 40px
       height 24px
-      background-color rgba(0,0,0,.2)
+      background-color rgba(0, 0, 0, 0.2)
       position absolute
       right 12px
       bottom 18px
@@ -155,9 +156,11 @@ export default {
       border-radius 12px
       text-align center
       color #fff
+
       .count
-        vertical-align: top
+        vertical-align top
         font-size 10px
+
       .icon-keyboard_arrow_right
         line-height 24px
         margin-left 2px
@@ -174,8 +177,9 @@ export default {
     white-space nowrap
     overflow hidden
     text-overflow ellipsis
-    background rgba(7, 17, 27, .5)
+    background rgba(7, 17, 27, 0.5)
     filter blur(-10px)
+
     .brand
       display inline-block
       vertical-align top
@@ -187,13 +191,15 @@ export default {
       vertical-align top
       background-size 22px 12px
       background-repeat no-repeat
+
     .text
-      vertical-align: top
-      margin: 0 4px
+      vertical-align top
+      margin 0 4px
       font-size 10px
       color #fff
       font-weight 200
       line-height 28px
+
     .icon-keyboard_arrow_right
       position absolute
       font-size 10px
