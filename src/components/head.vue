@@ -17,7 +17,7 @@
           <span class="text">{{ seller.supports[0].description }}</span>
         </div>
       </div>
-      <div class="countBox" v-if="seller.supports">
+      <div class="countBox" v-if="seller.supports" @click="showDetail">
         <span class="count">{{ seller.supports.length }}个</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
@@ -27,6 +27,10 @@
       <span class="brand"></span>
       <span class="text">{{ seller.bulletin }}</span>
       <i class="icon-keyboard_arrow_right"></i>
+    </div>
+    <!-- 模态框 -->
+    <div class="popup" v-show="isShow">
+      模态框
     </div>
   </section>
 </template>
@@ -40,8 +44,18 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      isShow: false
+    };
+  },
   created() {
     this.classMap = ["decrease", "discount", "special", "invoice", "guarantee"];
+  },
+  methods: {
+    showDetail() {
+      this.isShow = true;
+    }
   }
 };
 </script>
@@ -51,6 +65,7 @@ export default {
 
 .header
   width 100%
+  position relative
 
   .info
     width 100%
@@ -178,6 +193,7 @@ export default {
     overflow hidden
     text-overflow ellipsis
     background rgba(7, 17, 27, 0.5)
+    color #fff
     filter blur(-10px)
 
     .brand
@@ -205,4 +221,12 @@ export default {
       font-size 10px
       right 10px
       top 8px
+  .popup
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color rgba(7,17,27,.8)
+    blur: 10px
 </style>
