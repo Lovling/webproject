@@ -30,18 +30,27 @@
     </div>
     <!-- 模态框 -->
     <div class="popup" v-show="isShow">
-      <div class="title">{{ seller.name }}</div>
-      <div class="star"></div>
-      <div class="favorable"></div>
-      <div class="bulletin"></div>
-      <div class="detail-close">
-        <i class="icon-close"></i>
+      <div class="popup-wrapper">
+        <div class="title">{{ seller.name }}</div>
+        <div class="star">
+          <star :size="48" :score="seller.score"></star>
+        </div>
+        <div class="favorable"></div>
+        <div class="bulletin"></div>
+        <div class="detail-close">
+          <i class="icon-close"></i>
+        </div>
       </div>
+      <div class="icon-close"></div>
     </div>
   </section>
 </template>
 <script>
+import star from "./common/star";
 export default {
+  components: {
+    star
+  },
   props: {
     seller: {
       type: Object,
