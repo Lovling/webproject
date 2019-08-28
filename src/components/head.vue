@@ -37,11 +37,10 @@
         </div>
         <div class="favorable"></div>
         <div class="bulletin"></div>
-        <div class="detail-close">
-          <i class="icon-close"></i>
-        </div>
       </div>
-      <div class="icon-close"></div>
+      <div class="detail-close">
+        <i class="icon-close"></i>
+      </div>
     </div>
   </section>
 </template>
@@ -258,5 +257,5 @@ export default {
       margin 16px 0 28px 0
       text-align center
       line-height 24px
-      background #fff
+      background rgba(7, 17, 27, 0.8)
 </style>
