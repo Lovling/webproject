@@ -31,11 +31,15 @@
     <!-- 模态框 -->
     <div class="popup" v-show="isShow">
       <div class="popup-wrapper">
-        <div class="title">{{ seller.name }}</div>
+        <div class="titles">{{ seller.name }}</div>
         <div class="star">
           <star :size="48" :score="seller.score"></star>
         </div>
-        <div class="favorable"></div>
+        <div class="title">
+          <div class="line"></div>
+          <div class="text">优惠信息</div>
+          <div class="line"></div>
+        </div>
         <div class="bulletin"></div>
       </div>
       <div class="detail-close">
@@ -245,7 +249,7 @@ export default {
     background-color rgba(7, 17, 27, 0.8)
     backdrop-filter blur(10px)
 
-    .title
+    .titles
       margin-top 64px
       text-align center
       font-size 16px
@@ -258,4 +262,18 @@ export default {
       text-align center
       line-height 24px
       background rgba(7, 17, 27, 0.8)
+    .title
+      display flex
+      width 80%
+      margin 28px auto 24px
+      .line
+        flex 1
+        position relative
+        top -6px
+        border-bottom 1px solid rgba(255,255,255, .2)
+      .text
+        padding 0 12px
+        font-weight 700
+        font-size 14px
+        color #fff
 </style>
